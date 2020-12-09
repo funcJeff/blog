@@ -2,70 +2,21 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Tuples of Each Element of Array Within Array</title>
+    <title>iPhone Voice Over Commands</title>
   </head>
   <body>
-    <h1>Tuples of Each Element of Array Within Array</h1>
-    <p>I have an array of <em>X</em>s. Each <em>X</em> might have an array of <em>Y</em>s. I want an array of <em>Y</em>s paired with its owning <em>X</em>. I would describe this as turning the array of arrays inside out. I do not want to use <tt>for</tt> loops.</p>
-    <p>I made no effort for this code to be concise or performant. The <tt>CustomStringConvertible</tt> conformance is for human-readable output in the console.</p>
-    <h2>Code</h2>
-    <p>
-    <code>
-    <pre>
-struct Tomato : CustomStringConvertible {
-    let mass:Double
-    var description: String {
-        return "tomato: mass = \(mass)"
-    }
-}
-enum Health { case dead, bad, good, perfect }
-struct Plant : CustomStringConvertible {
-    let health:Health
-    let tomatoes:[Tomato]?
-    var description: String {
-        return "plant: health = \(health)"
-    }
-}
-struct Pair : CustomStringConvertible {
-    let tomato:Tomato
-    let plant:Plant
-    var description: String {
-        return "pair:\n\t\(tomato)\n\t\(plant)\n"
-    }
-}
-let plants:[Plant] = [
-    Plant(health: .dead, tomatoes:nil),
-    Plant(health: .bad, tomatoes: [Tomato(mass:4.6), Tomato(mass:3.32)]),
-    Plant(health: .good, tomatoes: [Tomato(mass:28.9)])
-]
-// We want an array of all the tomatoes,
-// but each is paired with the plant it comes from.
-let pairs:[Pair] = plants.compactMap({ plant in
-    plant.tomatoes?.map({ tomato in
-        return Pair(tomato: tomato, plant: plant)
-    })
-}).flatMap({ $0 })
-print(pairs)
-    </pre>
-    </code>
-    </p>
-    <h2>Output</h2>
-    <p>
-    <code>
-    <pre>
-[pair:
-	tomato: mass = 4.6
-	plant: health = bad
-, pair:
-	tomato: mass = 3.32
-	plant: health = bad
-, pair:
-	tomato: mass = 28.9
-	plant: health = good
-]
-    </pre>
-    </code>
-    </p>
-    <p>
+    <h1>iPhone Voice Over Commands</h1>
+    <table>
+    <thead>
+        <tr>
+            <th>Category</th><th>Command</th><th>Gesture</th> <th>Keyboard</th>
+        </tr>
+    </thead>
+     <tbody>
+        <tr>
+            <td>XXX</td><td>YYY</td><td>ZZZ</td><td>AAA</td>
+        </tr>
+    </tbody>
+    </table>
   </body>
 </html>
