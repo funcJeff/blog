@@ -7,7 +7,7 @@
 <body>
 <h1>watchOS Life Cycle Call Backs</h1>
 
-<p>At launch:
+<h2>At launch:</h2>
 <samp>
 <pre>
 ExtensionDelegate.applicationDidFinishLaunching
@@ -22,25 +22,31 @@ ExtensionDelegate.applicationDidBecomeActive
 InterfaceController.willActivate
 </pre>
 </samp>
-</p>
 
-<p>Active app user drops wrist (top app):
+<h2>Active app, user drops wrist, frontmost app:</h2>
 <samp>
 <pre>
 ExtensionDelegate.applicationWillResignActive
 InterfaceController.didDeactivate
 </pre>
 </samp>
-</p>
 
-<p>Active app user drops wrist (top app):
+<h2>Active app, user clicks side button, Watch shows Dock:</h2>
 <samp>
 <pre>
 ExtensionDelegate.applicationWillResignActive
 InterfaceController.didDeactivate
+ExtensionDelegate.applicationDidEnterBackground
 </pre>
 </samp>
-</p>
+
+<h2>Watch showing face, app was in Dock, user clicks side button, Watch shows Dock, app is index 1 of Dock:</h2>
+<samp>
+<pre>
+ExtensionDelegate.applicationWillEnterForeground
+InterfaceController.willActivate
+</pre>
+</samp>
 
 </body>
 </html>
