@@ -7,7 +7,16 @@
 <body>
 <h1>watchOS Life Cycle Call Backs</h1>
 
-<h2>At launch:</h2>
+<p>What call backs are made to <tt>ExtensionDelegate</tt> and <tt>InterfaceController</tt> during different life cycle changes.</p>
+
+<p>This was done with an Apple Watch Series 3.</p>
+
+<h2>Launch</h2>
+<ol>
+  <li><em>Precondition:</em> app is not running.
+  <li>User taps app icon on Watch face.
+  <li>App becomes active.
+</ol>
 <samp>
 <pre>
 ExtensionDelegate.applicationDidFinishLaunching
@@ -16,14 +25,16 @@ InterfaceController.awake context = nil
 ExtensionDelegate.applicationDidBecomeActive
 InterfaceController.willActivate
 InterfaceController.didAppear
-ExtensionDelegate.applicationWillResignActive
-InterfaceController.didDeactivate
-ExtensionDelegate.applicationDidBecomeActive
-InterfaceController.willActivate
 </pre>
 </samp>
 
-<h2>Active app, user drops wrist, frontmost app:</h2>
+<h2>Wrist drop</h2>
+<ol>
+  <li><em>Precondition:</em> app is active.
+  <li>User drops wrist.
+  <li>App is frontmost app.
+  <li>Watch face does dark.
+</ol>
 <samp>
 <pre>
 ExtensionDelegate.applicationWillResignActive
@@ -31,7 +42,12 @@ InterfaceController.didDeactivate
 </pre>
 </samp>
 
-<h2>Active app, user clicks side button, Watch shows Dock:</h2>
+<h2>Active to Dock</h2>
+<ol>
+  <li><em>Precondition:</em> app is active.
+  <li>User clicks side button.
+  <li>Watch shows Dock.
+</ol>
 <samp>
 <pre>
 ExtensionDelegate.applicationWillResignActive
