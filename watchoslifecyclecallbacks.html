@@ -70,9 +70,9 @@ ExtensionDelegate.applicationDidEnterBackground
 </pre>
 </samp>
 
-<h2>Face to Dock</h2>
+<h2>Face to Dock, index 1</h2>
 <ol>
-  <li><em>Precondition:</em> app is in Dock.
+  <li><em>Precondition:</em> app is index 1 of Dock.
   <li>Watch showing face.
   <li>User clicks side button.
   <li>Watch shows Dock.
@@ -81,6 +81,22 @@ ExtensionDelegate.applicationDidEnterBackground
 <samp>
 <pre>
 ExtensionDelegate.applicationWillEnterForeground
+InterfaceController.willActivate
+</pre>
+</samp>
+
+<h2>Face to Dock, index 0</h2>
+<ol>
+  <li><em>Precondition:</em> app is index 0 of Dock.
+  <li>Watch showing face.
+  <li>User clicks side button.
+  <li>Watch shows Dock.
+  <li>App is index 0 of Dock.
+</ol>
+<samp>
+<pre>
+ExtensionDelegate.applicationWillEnterForeground
+ExtensionDelegate.applicationDidBecomeActive
 InterfaceController.willActivate
 </pre>
 </samp>
