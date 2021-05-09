@@ -42,6 +42,20 @@ InterfaceController.didDeactivate
 </pre>
 </samp>
 
+<h2>Wrist up</h2>
+<ol>
+  <li><em>Precondition:</em> app is frontmost app.
+  <li><em>Precondition:</em> user's wrist is down.
+  <li>User raises wrist.
+  <li>App is active.
+</ol>
+<samp>
+<pre>
+ExtensionDelegate.applicationDidBecomeActive
+InterfaceController.willActivate
+</pre>
+</samp>
+
 <h2>Active to Dock</h2>
 <ol>
   <li><em>Precondition:</em> app is active.
@@ -58,7 +72,7 @@ ExtensionDelegate.applicationDidEnterBackground
 
 <h2>Face to Dock</h2>
 <ol>
-  <li><em>Precondition:</em> app was in Dock.
+  <li><em>Precondition:</em> app is in Dock.
   <li>Watch showing face.
   <li>User clicks side button.
   <li>Watch shows Dock.
