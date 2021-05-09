@@ -117,25 +117,68 @@ InterfaceController.willActivate
 </pre>
 </samp>
 
-let face go dark (few seconds)
-no wist movement
+<h2>Three step sequence</h2>
+<h3>1. Go dark</h3>
+<ol>
+  <li><em>Precondition:</em> app is active.
+  <li>User does nothing for a several seconds.
+  <li>Watch face goes dark.
+  <li>User does not move their wrist.
+</ol>
+<samp>
+<pre>
 ExtensionDelegate.applicationWillResignActive
 InterfaceController.didDeactivate
+</pre>
+</samp>
 
-watcg face dark
-no wrsist move
-wait a few minutes
+<h3>2. Wait</h3>
+<ol>
+  <li><em>Precondition:</em> step 1 followed.
+  <li>User does not move wrist
+  <li>User waits a few minutes
+</ol>
+<samp>
+<pre>
 ExtensionDelegate.applicationDidEnterBackground
+</pre>
+</samp>
 
-
-user shake watch
-watch face shows
-app not show
+<h3>3. Move again</h3>
+<ol>
+  <li><em>Precondition:</em> step 2 followed.
+  <li>User shakes wrist.
+  <li>Watch shows face.
+  <li>Watch does <strong>not</strong> show app.
+</ol>
+<samp>
+<pre>
 InterfaceController.willActivate
 InterfaceController.didAppear
 ExtensionDelegate.handle backgroundTasks = [<WKSnapshotRefreshBackgroundTask: 0x16ef3f90> reason=4]
 InterfaceController.didDeactivate
 InterfaceController.willDisappear
+</pre>
+</samp>
+
+<h2>Active to remove from Dock</h2>
+<ol>
+  <li><em>Precondition:</em> app is active.
+  <li>User presses side button.
+  <li>Watch shows Dock.
+  <li>User swipes to from off-face right to left.
+  <li>Watch shows red 'X' next to app in Dock.
+  <li>User taps red 'X'.
+</ol>
+<samp>
+<pre>
+ExtensionDelegate.applicationWillResignActive
+InterfaceController.didDeactivate
+ExtensionDelegate.applicationDidEnterBackground
+ExtensionDelegate.applicationWillEnterForeground
+</pre>
+</samp>
+
 
 </body>
 </html>
