@@ -101,5 +101,21 @@ InterfaceController.willActivate
 </pre>
 </samp>
 
+<h2>Face to Dock, not on Dock</h2>
+<ol>
+  <li><em>Precondition:</em> app is in Dock at index 7
+  <li>Watch showing face.
+  <li>User clicks side button.
+  <li>Watch shows Dock.
+  <li>App is index 0 of Dock.
+</ol>
+<samp>
+<pre>
+ExtensionDelegate.applicationWillEnterForeground
+ExtensionDelegate.applicationDidBecomeActive
+InterfaceController.willActivate
+</pre>
+</samp>
+
 </body>
 </html>
