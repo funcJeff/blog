@@ -225,5 +225,23 @@ InterfaceController.willActivate
 </pre>
 </samp>
 
+<h2>Not running</h2>
+<ol>
+  <li><em>Precondition:</em> app is not active.
+  <li>User occasionally uses the Watch.
+  <li>A few minutes pass.
+  <li>User does <strong>not</strong> active the app during this time.
+</ol>
+<samp>
+<pre>
+InterfaceController.willActivate
+InterfaceController.didAppear
+ExtensionDelegate.handle backgroundTasks = [<WKSnapshotRefreshBackgroundTask: 0x16e79bc0> reason=4]
+ExtensionDelegate.handle backgroundTasks is WKSnapshotRefreshBackgroundTask
+InterfaceController.didDeactivate
+InterfaceController.willDisappear
+</pre>
+</samp>
+
 </body>
 </html>
