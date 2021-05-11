@@ -61,6 +61,7 @@ InterfaceController.willActivate
   <li><em>Precondition:</em> app is active.
   <li>User clicks side button.
   <li>Watch shows Dock.
+  <li>App is index 0 of Dock.
 </ol>
 <samp>
 <pre>
@@ -73,7 +74,7 @@ ExtensionDelegate.applicationDidEnterBackground
 <h2>Face to Dock, index 1</h2>
 <ol>
   <li><em>Precondition:</em> app is index 1 of Dock.
-  <li>Watch showing face.
+  <li><em>Precondition:</em> Watch showing face.
   <li>User clicks side button.
   <li>Watch shows Dock.
   <li>App is index 1 of Dock.
@@ -88,16 +89,14 @@ InterfaceController.willActivate
 <h2>Face to Dock, index 0</h2>
 <ol>
   <li><em>Precondition:</em> app is index 0 of Dock.
-  <li>Watch showing face.
+  <li><em>Precondition:</em> Watch showing face.
   <li>User clicks side button.
   <li>Watch shows Dock.
   <li>App is index 0 of Dock.
 </ol>
 <samp>
 <pre>
-ExtensionDelegate.applicationWillEnterForeground
-ExtensionDelegate.applicationDidBecomeActive
-InterfaceController.willActivate
+[No callbacks invoked.]
 </pre>
 </samp>
 
