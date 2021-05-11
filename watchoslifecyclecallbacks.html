@@ -100,19 +100,34 @@ InterfaceController.willActivate
 </pre>
 </samp>
 
-<h2>Face to Dock, not on Dock</h2>
+<h2>Face to Dock, last index</h2>
 <ol>
-  <li><em>Precondition:</em> app is in Dock at index 7
+  <li><em>Precondition:</em> app is in Dock at last index
   <li>Watch showing face.
   <li>User clicks side button.
   <li>Watch shows Dock.
-  <li>App is index 0 of Dock.
+  <li>???
 </ol>
 <samp>
 <pre>
 ExtensionDelegate.applicationWillEnterForeground
 ExtensionDelegate.applicationDidBecomeActive
 InterfaceController.willActivate
+</pre>
+</samp>
+
+<h2>Face to Dock, not in Dock</h2>
+<ol>
+  <li><em>Precondition:</em> app is not in Dock
+  <li><em>Precondition:</em> app was not manually removed from Dock
+  <li>Watch showing face.
+  <li>User clicks side button.
+  <li>Watch shows Dock.
+  <li>???
+</ol>
+<samp>
+<pre>
+???
 </pre>
 </samp>
 
