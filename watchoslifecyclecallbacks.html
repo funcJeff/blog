@@ -164,14 +164,14 @@ InterfaceController.willDisappear
 </pre>
 </samp>
 
-<h2>Active to remove from Dock</h2>
+<h2>To Dock + Remove (2 step)</h2>
+<h3>1. Active to Dock scroll</h3>
 <ol>
   <li><em>Precondition:</em> app is active.
   <li>User presses side button.
   <li>Watch shows Dock.
-  <li>User swipes to from off-face right to left.
-  <li>Watch shows red 'X' next to app in Dock.
-  <li>User taps red 'X'.
+  <li>App is at index 0 in Dock.
+  <li>User scrolls to top of Dock.
 </ol>
 <samp>
 <pre>
@@ -179,9 +179,24 @@ ExtensionDelegate.applicationWillResignActive
 InterfaceController.didDeactivate
 ExtensionDelegate.applicationDidEnterBackground
 ExtensionDelegate.applicationWillEnterForeground
+InterfaceController.willActivate
 </pre>
 </samp>
 
+<h2>2. Remove from Dock</h2>
+<ol>
+  <li><em>Precondition:</em> step 1 followed.
+  <li>User swipes to from off-face right to left.
+  <li>Watch shows red 'X' next to app in Dock.
+  <li>User taps red 'X'.
+</ol>
+<samp>
+<pre>
+[No other callbacks invoked.]
+[InterfaceController.deinit **not** called.]
+[App is terminated.]
+</pre>
+</samp>
 
 </body>
 </html>
