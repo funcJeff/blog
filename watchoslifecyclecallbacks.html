@@ -146,15 +146,19 @@ ExtensionDelegate.applicationDidEnterBackground
 <h3>3. Move again</h3>
 <ol>
   <li><em>Precondition:</em> step 2 followed.
-  <li>User shakes wrist.
+  <li>User taps dark Watch face.
   <li>Watch shows face.
   <li>Watch does <strong>not</strong> show app.
+  <li>User keeps Watch face active by occassional taps for a couple more minutes.
+  <li>App is never active.
+  <li>This this happens:
 </ol>
 <samp>
 <pre>
 InterfaceController.willActivate
 InterfaceController.didAppear
-ExtensionDelegate.handle backgroundTasks = [<WKSnapshotRefreshBackgroundTask: 0x16ef3f90> reason=4]
+ExtensionDelegate.handle backgroundTasks = [<WKSnapshotRefreshBackgroundTask: 0x176ae740> reason=4]
+ExtensionDelegate.handle backgroundTasks is WKSnapshotRefreshBackgroundTask
 InterfaceController.didDeactivate
 InterfaceController.willDisappear
 </pre>
